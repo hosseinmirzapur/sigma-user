@@ -32,46 +32,46 @@ interface Props {
 
 const notifications: NotificationsType[] = [
   {
-    meta: 'Today',
+    meta: 'امروز',
     avatarAlt: 'Flora',
-    title: 'Congratulation Flora! 🎉',
+    title: 'به شما تبریک میگوییم 🎉',
     avatarImg: '/images/avatars/4.png',
-    subtitle: 'Won the monthly best seller badge'
+    subtitle: 'شما برنده عنوان برترین بازرگان سال شدید!'
   },
   {
-    meta: 'Yesterday',
+    meta: 'دیروز',
     avatarColor: 'primary',
-    subtitle: '5 hours ago',
-    avatarText: 'Robert Austin',
-    title: 'New user registered.'
+    subtitle: '۵ ساعت پیش',
+    avatarText: 'احمد مستوفی',
+    title: 'سفارش شما در سیستم ثبت شد'
   },
   {
-    meta: '11 Aug',
-    avatarAlt: 'message',
-    title: 'New message received 👋🏻',
+    meta: '۱۱ آگوست',
+    avatarAlt: 'پیام',
+    title: 'پیام جدید دریافت شد 👋🏻',
     avatarImg: '/images/avatars/5.png',
-    subtitle: 'You have 10 unread messages'
+    subtitle: 'شما ۱۰ پیام خوانده نشده دارید'
   },
   {
-    meta: '25 May',
-    title: 'Paypal',
-    avatarAlt: 'paypal',
-    subtitle: 'Received Payment',
+    meta: '۲۵ مه',
+    title: 'زرین پال',
+    avatarAlt: 'زرین پال',
+    subtitle: 'تراکنش جدیدی انجام شد',
     avatarImg: '/images/misc/paypal.png'
   },
   {
-    meta: '19 Mar',
-    avatarAlt: 'order',
-    title: 'Received Order 📦',
+    meta: '۱۹ مارس',
+    avatarAlt: 'سفارش',
+    subtitle: 'سفارش شما تغییر وضعیت داده شد',
     avatarImg: '/images/avatars/3.png',
-    subtitle: 'New order received from John'
+    title: 'تغییر وضعیت سفارش'
   },
   {
-    meta: '27 Dec',
-    avatarAlt: 'chart',
-    subtitle: '25 hrs ago',
+    meta: '۲۷ دسامبر',
+    avatarAlt: 'نمودار',
+    subtitle: '۲۵ ساعت پیش',
     avatarImg: '/images/misc/chart.png',
-    title: 'Finance report has been generated'
+    title: 'گزارش شما آماده است'
   }
 ]
 

@@ -29,7 +29,7 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
-import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
+import Image from 'next/image'
 
 // ** Styled Components
 const RegisterIllustration = styled('img')(({ theme }) => ({
@@ -100,11 +100,7 @@ const Register = () => {
             margin: theme => theme.spacing(8, 0, 8, 8)
           }}
         >
-          <RegisterIllustration
-            alt='register-illustration'
-            src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
-          />
-          <FooterIllustrationsV2 />
+          <RegisterIllustration alt='register-illustration' src={'/images/pages/login.svg'} className='w-[600px]' />
         </Box>
       ) : null}
       <RightWrapper>
@@ -118,46 +114,27 @@ const Register = () => {
           }}
         >
           <Box sx={{ width: '100%', maxWidth: 400 }}>
-            <svg width={34} viewBox='0 0 32 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
-              <path
-                fillRule='evenodd'
-                clipRule='evenodd'
-                fill={theme.palette.primary.main}
-                d='M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z'
-              />
-              <path
-                fill='#161616'
-                opacity={0.06}
-                fillRule='evenodd'
-                clipRule='evenodd'
-                d='M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z'
-              />
-              <path
-                fill='#161616'
-                opacity={0.06}
-                fillRule='evenodd'
-                clipRule='evenodd'
-                d='M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z'
-              />
-              <path
-                fillRule='evenodd'
-                clipRule='evenodd'
-                fill={theme.palette.primary.main}
-                d='M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z'
-              />
-            </svg>
+            <div className='flex items-center justify-center'>
+              {settings.mode === 'dark' ? (
+                <Image src={'/images/logos/app-logo.png'} width={200} height={200} alt='' />
+              ) : (
+                <Image src={'/images/logos/app-logo-dark.png'} width={200} height={200} alt='' />
+              )}
+            </div>
             <Box sx={{ my: 6 }}>
               <Typography variant='h3' sx={{ mb: 1.5 }}>
-                Adventure starts here 🚀
+                سامانه جامع گستره جهان سیگما
               </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>Make your app management easy and fun!</Typography>
+              <Typography sx={{ color: 'text.secondary' }}>
+                برای استفاده از خدمات جهان سیگما و دسترسی به داشبورد کاربری خود، ابتدا ثبت نام کنید
+              </Typography>
             </Box>
             <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
-              <CustomTextField autoFocus fullWidth sx={{ mb: 4 }} label='Username' placeholder='johndoe' />
+              <CustomTextField autoFocus fullWidth sx={{ mb: 4 }} label='نام کاربری' placeholder='اینجا بنویسید...' />
               <CustomTextField fullWidth label='Email' sx={{ mb: 4 }} placeholder='user@email.com' />
               <CustomTextField
                 fullWidth
-                label='Password'
+                label='رمز عبور'
                 id='auth-login-v2-password'
                 type={showPassword ? 'text' : 'password'}
                 InputProps={{
@@ -178,21 +155,30 @@ const Register = () => {
                 control={<Checkbox />}
                 sx={{ mb: 4, mt: 1.5, '& .MuiFormControlLabel-label': { fontSize: theme.typography.body2.fontSize } }}
                 label={
-                  <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                    <Typography sx={{ color: 'text.secondary' }}>I agree to</Typography>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      justifyContent: 'center',
+                      gap: '3px'
+                    }}
+                  >
+                    <Typography sx={{ color: 'text.secondary' }}>تمامی</Typography>
                     <Typography component={LinkStyled} href='/' onClick={e => e.preventDefault()} sx={{ ml: 1 }}>
-                      privacy policy & terms
+                      قوانین و مقررات جهان سیگما
                     </Typography>
+                    <Typography sx={{ color: 'text.secondary' }}>را می پذیرم</Typography>
                   </Box>
                 }
               />
               <Button fullWidth type='submit' variant='contained' sx={{ mb: 4 }}>
-                Sign up
+                ثبت نام
               </Button>
               <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <Typography sx={{ color: 'text.secondary', mr: 2 }}>Already have an account?</Typography>
+                <Typography sx={{ color: 'text.secondary', mr: 2 }}>قبلا ثبت نام انجام داده اید؟</Typography>
                 <Typography component={LinkStyled} href='/login'>
-                  Sign in instead
+                  وارد شوید
                 </Typography>
               </Box>
               <Divider
@@ -203,7 +189,7 @@ const Register = () => {
                   my: theme => `${theme.spacing(6)} !important`
                 }}
               >
-                or
+                یا
               </Divider>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <IconButton href='/' component={Link} sx={{ color: '#497ce2' }} onClick={e => e.preventDefault()}>

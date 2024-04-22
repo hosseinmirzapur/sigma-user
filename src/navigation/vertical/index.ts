@@ -117,7 +117,7 @@ const navigation = (): VerticalNavItemsType => {
       path: '#'
     },
     {
-      title: 'درخواست افزودن به لیست',
+      title: 'افزودن به لیست کالا ها',
       icon: 'tabler:square-plus',
       path: '#'
     }

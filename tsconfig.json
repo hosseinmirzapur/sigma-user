@@ -22,11 +22,14 @@
     "incremental": true,
     "paths": {
       "apexcharts": [
-        "./node_modules/apexcharts-clevision"
+        "./node_modules/apexcharts-clevision",
       ],
       "apexcharts/*": [
         "./node_modules/apexcharts-clevision/*"
       ],
+      "react": [
+        "./node_modules/@types/react"
+      ]
     }
   },
   "include": [

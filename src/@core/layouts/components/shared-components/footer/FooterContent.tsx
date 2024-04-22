@@ -31,7 +31,7 @@ const FooterContent = () => {
   return (
     <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
       <Typography sx={{ mr: 2, display: 'flex', color: 'text.secondary' }}>
-        <Typography sx={{ ml: 1 }} href='#' component={StyledCompanyName}>
+        <Typography sx={{ ml: 1 }} href='https://sigma-world.vercel.app' component={StyledCompanyName}>
           گستره جهان سیگما
         </Typography>
       </Typography>

@@ -11,7 +11,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'احراز هویت',
       icon: 'tabler:key',
-      path: '#'
+      path: '/kyc'
     },
     {
       title: 'بازگشت به وبسایت',

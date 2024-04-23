@@ -192,7 +192,7 @@ const KYC = () => {
           <p className='w-9/12 mx-auto text-center lg:text-right'>
             مدارک شما در حال بررسی توسط کارشناسان ما است و نهایت تا ۲۴ ساعت اینده وضعیتشان مشخص خواهد شد.
           </p>
-          <div className='flex items-center justify-center hover:rotate-180 transition-all'>
+          <div className='flex items-center justify-center animate-bounce'>
             <Image src={'/images/misc/image.png'} alt='hourglass' width={100} height={100} />
           </div>
         </div>

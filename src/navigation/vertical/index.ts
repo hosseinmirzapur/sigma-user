@@ -22,7 +22,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'آموزش های بازرگانی',
       icon: 'tabler:school',
-      path: '#'
+      path: '/e-learn'
     },
     {
       sectionTitle: 'خدمات و درخواست ها'

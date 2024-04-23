@@ -25,7 +25,7 @@ const FileUploaderSingle = () => {
   const { getRootProps, getInputProps } = useDropzone({
     multiple: false,
     accept: {
-      'image/*': ['.png', '.jpg', '.jpeg', '.gif']
+      'image/*': ['.png', '.jpg', '.jpeg']
     },
     onDrop: (acceptedFiles: File[]) => {
       setFiles(acceptedFiles.map((file: File) => Object.assign(file)))
@@ -33,7 +33,9 @@ const FileUploaderSingle = () => {
   })
 
   const img = files.map((file: FileProp) => (
-    <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file as any)} />
+    <div className='flex justify-center items-center w-[300px] mx-auto'>
+      <img key={file.name} alt={file.name} className='single-file-image' src={URL.createObjectURL(file as any)} />
+    </div>
   ))
 
   return (
@@ -58,10 +60,7 @@ const FileUploaderSingle = () => {
             <Icon icon='tabler:upload' fontSize='1.75rem' />
           </Box>
           <Typography variant='h4' sx={{ mb: 2.5 }}>
-            Drop files here or click to upload.
-          </Typography>
-          <Typography sx={{ color: 'text.secondary' }}>
-            (This is just a demo drop zone. Selected files are not actually uploaded.)
+            فایل خود را در این قسمت رها کرده یا برای آپلود کلیک کنید
           </Typography>
         </Box>
       )}

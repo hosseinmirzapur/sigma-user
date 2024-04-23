@@ -17,7 +17,7 @@ module.exports = {
     return config
   },
   images: {
-    domains: ['https://hosseinmirzapur.github.io/sigma-world'],
+    domains: ['https://hosseinmirzapur.github.io/sigma-world', 'https://gifer.com'],
     remotePatterns: [
       {
         protocol: 'https',

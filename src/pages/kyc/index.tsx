@@ -50,9 +50,13 @@ const kyc_levels: KycStatus[] = [
 const KYC = () => {
   // ** variables
   const [activeStep, setActiveStep] = useState(0)
-  const [loading, setLoading] = useState(false)
+  const [sendLoading, setSendLoading] = useState(false)
+  const [verifyLoading, setVerifyLoading] = useState(false)
 
   // ** functions
+  const toggleSendLoading = () => setSendLoading(!sendLoading)
+  const toggleVerifyLoading = () => setVerifyLoading(!verifyLoading)
+
   const handleNext = () => setActiveStep(prev => prev + 1)
   const handleComponent = () => {
     switch (activeStep) {
@@ -70,7 +74,7 @@ const KYC = () => {
   }
 
   const handleOTP = () => {
-    toggleLoading()
+    toggleSendLoading()
     // request to backend
     // on success
     // toggleLoading
@@ -96,8 +100,6 @@ const KYC = () => {
     // error toast
   }
 
-  const toggleLoading = () => setLoading(!loading)
-
   // ** components
   const NotVerified = () => {
     return (
@@ -109,23 +111,33 @@ const KYC = () => {
           </p>
 
           <FormGroup className='flex flex-row justify-around'>
-            <div className='w-[30%] flex flex-col gap-5'>
+            <div className='w-[45%] md:w-[40%] flex flex-col gap-5'>
               <InputLabel>شماره موبایل</InputLabel>
               <Input type='number' className='w-full mx-auto' dir='ltr' />
 
               <div className='flex justify-center mt-5'>
-                <Button color='primary' variant={loading ? 'outlined' : 'contained'} onClick={handleOTP} size='medium'>
-                  {loading ? <CircularProgress size={'1rem'} /> : 'درخواست کد'}
+                <Button
+                  color='primary'
+                  variant={sendLoading ? 'outlined' : 'contained'}
+                  onClick={handleOTP}
+                  size='medium'
+                >
+                  {sendLoading ? <CircularProgress size={'1rem'} /> : 'ارسال کد'}
                 </Button>
               </div>
             </div>
-            <div className='w-[30%] flex flex-col gap-5'>
+            <div className='w-[45%] md:w-[40%] flex flex-col gap-5'>
               <InputLabel>کد ارسال شده</InputLabel>
               <Input type='number' className='w-full mx-auto' dir='ltr' />
 
               <div className='flex justify-center mt-5'>
-                <Button color='primary' variant={loading ? 'outlined' : 'contained'} onClick={verifyOTP} size='medium'>
-                  {loading ? <CircularProgress size={'1rem'} /> : 'تایید کد'}
+                <Button
+                  color='primary'
+                  variant={verifyLoading ? 'outlined' : 'contained'}
+                  onClick={verifyOTP}
+                  size='medium'
+                >
+                  {verifyLoading ? <CircularProgress size={'1rem'} /> : 'تایید کد'}
                 </Button>
               </div>
             </div>

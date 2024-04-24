@@ -14,15 +14,15 @@ const navigation = (): VerticalNavItemsType => {
       path: '/kyc'
     },
     {
+      title: 'آموزش های بازرگانی',
+      icon: 'tabler:school',
+      path: '/e-learn'
+    },
+    {
       title: 'بازگشت به وبسایت',
       icon: 'tabler:arrow-back-up',
       externalLink: true,
       path: 'https://sigma-world.vercel.app'
-    },
-    {
-      title: 'آموزش های بازرگانی',
-      icon: 'tabler:school',
-      path: '/e-learn'
     },
     {
       sectionTitle: 'خدمات و درخواست ها'

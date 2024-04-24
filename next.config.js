@@ -17,13 +17,6 @@ module.exports = {
     return config
   },
   images: {
-    domains: ['https://hosseinmirzapur.github.io/sigma-world', 'https://gifer.com', 'https://aparat.com'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'hosseinmirzapur.github.io',
-        pathname: '/sigma-world'
-      }
-    ]
+    domains: ['https://hosseinmirzapur.github.io/sigma-world', 'https://aparat.com', 'https://youtube.com']
   }
 }

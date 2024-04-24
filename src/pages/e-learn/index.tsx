@@ -2,91 +2,57 @@
 
 import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
-import { Card, CardContent, Tab, Tabs } from '@mui/material'
+import { Card, Tab, Tabs } from '@mui/material'
 import { useState } from 'react'
+import { categories } from './data'
 
-interface Category {
-  title: string
-  videos: Video[]
-}
-
-interface Video {
-  title: string
-  description?: string
-  src: string
-}
-
-const categories: Category[] = [
-  {
-    title: 'مالی',
-    videos: []
-  },
-  {
-    title: 'مالیاتی',
-    videos: []
-  },
-  {
-    title: 'ارزی',
-    videos: []
-  },
-  {
-    title: 'بیمه',
-    videos: []
-  },
-  {
-    title: 'حمل بین المللی',
-    videos: []
-  },
-  {
-    title: 'گمرکی',
-    videos: []
-  },
-  {
-    title: 'قرارداد های تجاری بین المللی',
-    videos: []
-  },
-  {
-    title: 'سامانه جامع تجارت',
-    videos: []
-  },
-  {
-    title: 'سامانه جامع امور گمرکی',
-    videos: []
-  },
-  {
-    title: 'سایرین',
-    videos: []
-  }
-]
+import ReactPlayer from 'react-player'
 
 const ELearn = () => {
   // ** variables
   const [tab, setTab] = useState(0)
 
   // ** functions
-  const handleTabChange = (e: React.SyntheticEvent, selectedTab: number) => {
+  const handleTabChange = (_: React.SyntheticEvent, selectedTab: number) => {
     setTab(selectedTab)
   }
 
   return (
-    <div>
-      <TabContext value={`${tab}`}>
-        <Tabs variant='scrollable' scrollButtons allowScrollButtonsMobile value={tab} onChange={handleTabChange}>
-          {categories.map((category, index) => (
-            <Tab key={index} label={category.title} />
-          ))}
-        </Tabs>
-        {categories.map((category, index) => (
-          <TabPanel value={`${tab}`} key={index}>
-            {category.videos.map((video, index) => (
-              <Card key={index}>
-                <CardContent></CardContent>
-              </Card>
-            ))}
-          </TabPanel>
+    <TabContext value={`${tab}`}>
+      <Tabs
+        variant='scrollable'
+        scrollButtons
+        allowScrollButtonsMobile
+        value={tab}
+        onChange={handleTabChange}
+        className=''
+      >
+        {categories.map((category, i) => (
+          <Tab key={i} label={category.title} centerRipple />
         ))}
-      </TabContext>
-    </div>
+      </Tabs>
+      {categories.map((category, index) => (
+        <TabPanel value={`${index}`} key={index} className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          {category.videos.map((video, index) => (
+            <Card key={index}>
+              <div className='flex flex-col lg:flex-row gap-3 md:gap-6 lg:gap-9'>
+                <div className='p-2 w-[300px]'>
+                  <ReactPlayer url={video.src} width={300} height={250} />
+                </div>
+                <div className='flex flex-col px-5'>
+                  <div className='h-[100px] pt-0 md:pt-5 lg:pt-10'>
+                    <h1 className='md:text-lg font-bold'>{video.title}</h1>
+                  </div>
+                  <div>
+                    <p>{video?.description}</p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </TabPanel>
+      ))}
+    </TabContext>
   )
 }
 

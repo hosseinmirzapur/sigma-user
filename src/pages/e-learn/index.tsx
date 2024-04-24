@@ -4,7 +4,7 @@ import TabContext from '@mui/lab/TabContext'
 import TabPanel from '@mui/lab/TabPanel'
 import { Card, Tab, Tabs } from '@mui/material'
 import { useState } from 'react'
-import { categories } from './data'
+import { categories } from '../../data/videos'
 
 import ReactPlayer from 'react-player'
 

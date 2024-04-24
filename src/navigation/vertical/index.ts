@@ -34,7 +34,7 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'مشاوره بازرگانی',
           icon: 'tabler:headset',
-          path: '#'
+          path: '/services/consultance'
         },
         {
           title: 'کارت بازرگانی',

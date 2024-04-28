@@ -18,5 +18,7 @@ module.exports = {
   },
   images: {
     domains: ['https://hosseinmirzapur.github.io/sigma-world', 'https://aparat.com', 'https://youtube.com']
+    // unoptimized: true
   }
+  // output: 'export'
 }

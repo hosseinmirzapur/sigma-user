@@ -39,7 +39,7 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'کارت بازرگانی',
           icon: 'tabler:id',
-          path: '#'
+          path: '/services/trading-card'
         },
         {
           title: 'حمل و نقل بین المللی',

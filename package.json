@@ -80,6 +80,7 @@
     "react-redux": "8.0.5",
     "reactflow": "^11.10.4",
     "recharts": "2.5.0",
+    "sharp": "^0.33.3",
     "stylis": "4.1.4",
     "stylis-plugin-rtl": "2.1.1",
     "typeface-yekan": "^1.0.11",

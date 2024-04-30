@@ -17,53 +17,61 @@ import {
 } from '@mui/material'
 import { GridColDef } from '@mui/x-data-grid'
 import Link from 'next/link'
+import { useState } from 'react'
 import CustomTable from 'src/components/custom-grid/CustomTable'
+import ShowDocModal from 'src/components/modals/trading-card/show-doc'
 import { realSteps, tradingCardDocs } from 'src/data'
 
-const columns: GridColDef[] = [
-  {
-    flex: 0.1,
-    minWidth: 100,
-    field: 'id',
-    headerName: '#'
-  },
-  {
-    flex: 0.25,
-    minWidth: 100,
-    field: 'title',
-    headerName: 'عنوان سند'
-  },
-  {
-    field: 'status',
-    headerName: 'وضعیت',
-    flex: 0.25,
-    valueGetter: params => {
-      switch (params.value) {
-        case 'pending':
-          return 'در حال بررسی'
-        case 'accepted':
-          return 'پذیرفته شده'
-        case 'rejected':
-          return 'رد شده'
+const TradingCard = () => {
+  // ** variables
+  const columns: GridColDef[] = [
+    {
+      flex: 0.1,
+      minWidth: 100,
+      field: 'id',
+      headerName: '#'
+    },
+    {
+      flex: 0.25,
+      minWidth: 100,
+      field: 'title',
+      headerName: 'عنوان سند'
+    },
+    {
+      field: 'status',
+      headerName: 'وضعیت',
+      flex: 0.25,
+      valueGetter: params => {
+        switch (params.value) {
+          case 'pending':
+            return 'در حال بررسی'
+          case 'accepted':
+            return 'پذیرفته شده'
+          case 'rejected':
+            return 'رد شده'
+        }
+      }
+    },
+    {
+      field: 'actions',
+      type: 'actions',
+      headerName: 'تصویر سند',
+      flex: 0.25,
+      getActions: () => {
+        return [
+          <Button color='primary' variant='outlined' size='small' onClick={toggleDoc}>
+            <Icon icon={'tabler:eye'} fontSize={26} />
+          </Button>
+        ]
       }
     }
-  },
-  {
-    field: 'actions',
-    type: 'actions',
-    headerName: 'تصویر سند',
-    flex: 0.25,
-    getActions: () => {
-      return [
-        <Button color='primary' variant='outlined' size='small'>
-          <Icon icon={'tabler:eye'} fontSize={26} />
-        </Button>
-      ]
-    }
-  }
-]
+  ]
 
-const TradingCard = () => {
+  const [docOpen, setDocOpen] = useState(false)
+
+  // ** functions
+  const toggleDoc = () => setDocOpen(!docOpen)
+
   return (
     <div className='flex flex-col gap-10'>
       <Breadcrumbs>
@@ -132,6 +140,7 @@ const TradingCard = () => {
           <div className='text-lg font-bold'>مدارک آپلود شده</div>
 
           <CustomTable columns={columns} rows={tradingCardDocs} />
+          <ShowDocModal onClose={toggleDoc} open={docOpen} docUrl='/images/others/sample-card.png' />
         </CardContent>
       </Card>
     </div>

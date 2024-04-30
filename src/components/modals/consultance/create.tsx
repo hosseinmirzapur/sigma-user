@@ -47,7 +47,7 @@ const CreateConsultanceModal: React.FC<ModalProps> = ({ open, toggleOpen }) => {
               <MenuItem value='onsite'>حضوری</MenuItem>
             </Select>
           </div>
-          <div className=''>
+          <div>
             <InputLabel>موضوع مشاوره</InputLabel>
             <Input type='text' />
           </div>

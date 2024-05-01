@@ -15,17 +15,20 @@ const Logistics = () => {
     {
       field: 'id',
       headerName: '#',
-      flex: 0.1
+      flex: 0.1,
+      minWidth: 100
     },
     {
       field: 'name',
       headerName: 'نام کالا',
-      flex: 0.25
+      flex: 0.25,
+      minWidth: 250
     },
     {
       field: 'action',
       headerName: 'عملیات کالا',
       flex: 0.15,
+      minWidth: 150,
       valueGetter(params) {
         switch (params.value) {
           case 'import':
@@ -43,6 +46,7 @@ const Logistics = () => {
       field: 'carry_type',
       headerName: 'نوع حمل',
       flex: 0.25,
+      minWidth: 250,
       valueGetter(params) {
         switch (params.value) {
           case 'ground':
@@ -62,6 +66,7 @@ const Logistics = () => {
       field: 'product_type',
       headerName: 'نوع کالا',
       flex: 0.25,
+      minWidth: 250,
       valueGetter(params) {
         switch (params.value) {
           case 'normal':
@@ -81,6 +86,8 @@ const Logistics = () => {
       field: 'actions',
       type: 'actions',
       headerName: 'جزییات',
+      flex: 0.2,
+      minWidth: 200,
       getActions: () => {
         return [
           <Button color='primary' variant='outlined'>

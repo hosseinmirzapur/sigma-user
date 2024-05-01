@@ -2,12 +2,12 @@
 
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import TableToolbar from '../grid-toolbar/TableToolbar'
-import { Stack } from '@mui/material'
+import { Stack, SxProps, Theme } from '@mui/material'
 
 interface TableData {
   rows: any[]
   columns: GridColDef[]
-  rest: any
+  rest?: SxProps<Theme>
 }
 
 const CustomTable: React.FC<TableData> = ({ rows, columns, rest }) => {

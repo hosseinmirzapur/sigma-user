@@ -22,7 +22,7 @@ const navigation = (): VerticalNavItemsType => {
       title: 'بازگشت به وبسایت',
       icon: 'tabler:arrow-back-up',
       externalLink: true,
-      path: 'https://sigma-world.vercel.app'
+      path: 'https://sigma-world.com'
     },
     {
       sectionTitle: 'خدمات و درخواست ها'
@@ -44,7 +44,7 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'حمل و نقل بین المللی',
           icon: 'tabler:tir',
-          path: '#'
+          path: '/services/logistics'
         },
         {
           title: 'بازرسی فنی (استاندارد)',

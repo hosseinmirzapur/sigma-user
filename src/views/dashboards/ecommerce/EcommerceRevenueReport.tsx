@@ -31,13 +31,13 @@ import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 const yearOptions = [new Date().getFullYear() - 1, new Date().getFullYear() - 2, new Date().getFullYear() - 3]
 
 const barSeries = [
-  { name: 'Earning', data: [252, 203, 152, 173, 235, 299, 235, 252, 106] },
-  { name: 'Expense', data: [-128, -157, -190, -163, -89, -51, -89, -136, -190] }
+  { name: 'به دست آمده', data: [252, 203, 152, 173, 235, 299, 235, 252, 106, 300, 100, 210] },
+  { name: 'هزینه ها', data: [-128, -157, -190, -163, -89, -51, -89, -136, -190, -30, -210, -100] }
 ]
 
 const lineSeries = [
-  { name: 'Last Month', data: [20, 10, 30, 16, 24, 5, 30, 23, 28, 5, 30] },
-  { name: 'This Month', data: [50, 40, 60, 46, 54, 35, 70, 53, 58, 35, 60] }
+  { name: 'ماه اخیر', data: [20, 10, 30, 16, 24, 5, 30, 23, 28, 5, 30, 10, 20, 8] },
+  { name: 'این ماه', data: [50, 40, 60, 46, 54, 35, 70, 53, 58, 35, 60, 43, 20, 60] }
 ]
 
 const StyledGrid = styled(Grid)<GridProps>(({ theme }) => ({
@@ -131,7 +131,20 @@ const EcommerceRevenueReport = () => {
       axisTicks: { show: false },
       crosshairs: { opacity: 0 },
       axisBorder: { show: false },
-      categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+      categories: [
+        'فروردین',
+        'اردیبهشت',
+        'خرداد',
+        'تیر',
+        'مرداد',
+        'شهریور',
+        'مهر',
+        'آبان',
+        'آذر',
+        'دی',
+        'بهمن',
+        'اسفند'
+      ],
       labels: {
         style: {
           colors: theme.palette.text.disabled,
@@ -258,7 +271,7 @@ const EcommerceRevenueReport = () => {
             '& .apexcharts-series[rel="2"]': { transform: 'translateY(-9px)' }
           }}
         >
-          <CardHeader title='Revenue Report' />
+          <CardHeader title='گزارش سود سالانه' />
           <CardContent>
             <ReactApexcharts type='bar' height={301} series={barSeries} options={barOptions} />
           </CardContent>
@@ -301,12 +314,12 @@ const EcommerceRevenueReport = () => {
             <Box
               sx={{ mb: 8, gap: 1, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}
             >
-              <Typography variant='h6'>Budget:</Typography>
+              <Typography variant='h6'>بودجه:</Typography>
               <Typography sx={{ color: 'text.secondary' }}>56,800</Typography>
             </Box>
             <ReactApexcharts type='line' height={80} series={lineSeries} options={lineOptions} />
             <Button sx={{ mt: 8 }} variant='contained'>
-              Increase Budget
+              افزایش بودجه
             </Button>
           </CardContent>
         </Grid>

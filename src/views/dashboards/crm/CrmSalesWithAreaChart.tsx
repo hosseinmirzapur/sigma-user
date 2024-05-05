@@ -78,15 +78,15 @@ const CrmSalesWithAreaChart = () => {
   return (
     <Card>
       <CardContent sx={{ pb: 0 }}>
-        <Typography variant='h5'>Sales</Typography>
+        <Typography variant='h5'>فروش</Typography>
         <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-          Last Year
+          سال اخیر
         </Typography>
       </CardContent>
       <ReactApexcharts type='area' height={96} series={series} options={options} />
       <CardContent sx={{ pt: 0 }}>
         <Box sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Typography variant='h4'>175k</Typography>
+          <Typography variant='h4'>۱۷۵ هزار دلار</Typography>
           <Typography variant='body2' sx={{ color: 'error.main' }}>
             -17.3%
           </Typography>

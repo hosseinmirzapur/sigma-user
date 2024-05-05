@@ -40,25 +40,25 @@ const data: DataType[] = [
   {
     amount: '$1,619',
     trendNumber: 18.6,
-    title: 'Net Profit',
+    title: 'سود خالص',
     avatarColor: 'primary',
-    subtitle: '12.4k Sales',
+    subtitle: '12.4 هزار فروش',
     avatarIcon: 'tabler:chart-pie-2'
   },
   {
     amount: '$3,571',
     trendNumber: 39.6,
-    title: 'Total Income',
+    title: 'درآمد کل',
     avatarColor: 'success',
-    subtitle: 'Sales, Affiliation',
+    subtitle: 'فروش، وابستگی',
     avatarIcon: 'tabler:currency-dollar'
   },
   {
     amount: '$430',
     trendNumber: 52.8,
-    title: 'Total Expenses',
+    title: 'هزینه کل',
     avatarColor: 'secondary',
-    subtitle: 'ADVT, Marketing',
+    subtitle: 'بازاریابی',
     avatarIcon: 'tabler:credit-card'
   }
 ]
@@ -103,7 +103,7 @@ const EcommerceEarningReports = () => {
       }
     },
     xaxis: {
-      categories: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+      categories: ['د', 'س', 'چ', 'پ', 'ج', 'ش', 'ی'],
       axisTicks: { show: false },
       axisBorder: { show: false },
       tickPlacement: 'on',
@@ -151,11 +151,11 @@ const EcommerceEarningReports = () => {
   return (
     <Card>
       <CardHeader
-        title='Earning Reports'
-        subheader='Weekly Earnings Overview'
+        title='گزارشات درآمد'
+        subheader='بررسی هفتگی درآمد ها'
         action={
           <OptionsMenu
-            options={['Refresh', 'Update', 'Share']}
+            options={['تازه سازی', 'به روزرسانی', 'اشتراک گذاری']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }

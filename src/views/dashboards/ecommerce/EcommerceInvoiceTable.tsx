@@ -64,7 +64,7 @@ const defaultColumns: GridColDef[] = [
     flex: 0.2,
     field: 'id',
     minWidth: 90,
-    headerName: '# ID',
+    headerName: '#',
     renderCell: ({ row }: CellType) => <LinkStyled href={`/apps/invoice/preview/${row.id}`}>{`#${row.id}`}</LinkStyled>
   },
   {
@@ -86,12 +86,12 @@ const defaultColumns: GridColDef[] = [
               </Typography>
               <br />
               <Typography variant='caption' sx={{ color: 'common.white', fontWeight: 600 }}>
-                Balance:
+                موجودی:
               </Typography>{' '}
               {balance}
               <br />
               <Typography variant='caption' sx={{ color: 'common.white', fontWeight: 600 }}>
-                Due Date:
+                تاریخ سررسید:
               </Typography>{' '}
               {dueDate}
             </>
@@ -108,14 +108,14 @@ const defaultColumns: GridColDef[] = [
     flex: 0.25,
     minWidth: 90,
     field: 'total',
-    headerName: 'Total',
+    headerName: 'کل',
     renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>${row.total || 0}</Typography>
   },
   {
     flex: 0.3,
     minWidth: 125,
     field: 'issuedDate',
-    headerName: 'Issued Date',
+    headerName: 'تاریخ مقرر',
     renderCell: ({ row }: CellType) => <Typography sx={{ color: 'text.secondary' }}>{row.issuedDate}</Typography>
   }
 ]
@@ -146,15 +146,15 @@ const EcommerceInvoiceTable = () => {
       minWidth: 130,
       sortable: false,
       field: 'actions',
-      headerName: 'Actions',
+      headerName: 'عملیات',
       renderCell: ({ row }: CellType) => (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Tooltip title='Delete Invoice'>
+          <Tooltip title='حذف صورت حساب'>
             <IconButton size='small' onClick={() => dispatch(deleteInvoice(row.id))}>
               <Icon icon='tabler:trash' />
             </IconButton>
           </Tooltip>
-          <Tooltip title='View'>
+          <Tooltip title='جزییات'>
             <IconButton size='small' component={Link} href={`/apps/invoice/preview/${row.id}`}>
               <Icon icon='tabler:eye' />
             </IconButton>
@@ -164,16 +164,16 @@ const EcommerceInvoiceTable = () => {
             menuProps={{ sx: { '& .MuiMenuItem-root svg': { mr: 2 } } }}
             options={[
               {
-                text: 'Download',
+                text: 'دانلود',
                 icon: <Icon icon='tabler:download' fontSize='1.25rem' />
               },
               {
-                text: 'Edit',
+                text: 'ویرایش',
                 href: `/apps/invoice/edit/${row.id}`,
                 icon: <Icon icon='tabler:pencil' fontSize='1.25rem' />
               },
               {
-                text: 'Duplicate',
+                text: 'کپی',
                 icon: <Icon icon='tabler:copy' fontSize='1.25rem' />
               }
             ]}
@@ -189,10 +189,10 @@ const EcommerceInvoiceTable = () => {
         sx={{ gap: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}
       >
         <Button component={Link} variant='contained' href='/apps/invoice/add' startIcon={<Icon icon='tabler:plus' />}>
-          Create Invoice
+          ایجاد صورت حساب
         </Button>
         <Box sx={{ gap: 4, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-          <CustomTextField value={value} placeholder='Search Invoice' onChange={e => setValue(e.target.value)} />
+          <CustomTextField value={value} placeholder='جستجوی صورت حساب...' onChange={e => setValue(e.target.value)} />
           <CustomTextField
             select
             sx={{ pr: 4, '& .MuiFilledInput-input.MuiSelect-select': { minWidth: '8rem !important' } }}
@@ -202,13 +202,13 @@ const EcommerceInvoiceTable = () => {
               onChange: e => setStatusValue(e.target.value as string)
             }}
           >
-            <MenuItem value=''>Select Status</MenuItem>
-            <MenuItem value='downloaded'>Downloaded</MenuItem>
-            <MenuItem value='draft'>Draft</MenuItem>
-            <MenuItem value='paid'>Paid</MenuItem>
-            <MenuItem value='partial payment'>Partial Payment</MenuItem>
-            <MenuItem value='past due'>Past Due</MenuItem>
-            <MenuItem value='sent'>Sent</MenuItem>
+            <MenuItem value=''>انتخاب وضعیت</MenuItem>
+            <MenuItem value='downloaded'>دانلود شده ها</MenuItem>
+            <MenuItem value='draft'>پیش نویس</MenuItem>
+            <MenuItem value='paid'>پرداخت شده</MenuItem>
+            <MenuItem value='partial payment'>پرداخت جزئی</MenuItem>
+            <MenuItem value='past due'>سررسید گذشته</MenuItem>
+            <MenuItem value='sent'>ارسال شده</MenuItem>
           </CustomTextField>
         </Box>
       </CardContent>

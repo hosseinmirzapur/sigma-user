@@ -110,13 +110,13 @@ const EcommerceProfit = () => {
   return (
     <Card>
       <CardContent>
-        <Typography variant='h5'>Profit</Typography>
+        <Typography variant='h5'>سود</Typography>
         <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-          Last Month
+          ماه اخیر
         </Typography>
         <ReactApexcharts type='line' height={93} series={series} options={options} />
         <Box sx={{ gap: 2, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-          <Typography variant='h4'>684k</Typography>
+          <Typography variant='h4'>۶۸۴ هزار دلار</Typography>
           <Typography variant='body2' sx={{ color: 'success.main' }}>
             +8.35%
           </Typography>

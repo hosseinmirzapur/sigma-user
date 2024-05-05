@@ -12,7 +12,7 @@ import EcommerceRevenueReport from 'src/views/dashboards/ecommerce/EcommerceReve
 import EcommerceEarningReports from 'src/views/dashboards/ecommerce/EcommerceEarningReports'
 import EcommerceGeneratedLeads from 'src/views/dashboards/ecommerce/EcommerceGeneratedLeads'
 import EcommercePopularProducts from 'src/views/dashboards/ecommerce/EcommercePopularProducts'
-import EcommerceCongratulationsJohn from 'src/views/dashboards/ecommerce/EcommerceCongratulationsJohn'
+import CrmSalesWithAreaChart from 'src/views/dashboards/crm/CrmSalesWithAreaChart'
 
 // ** Custom Component Import
 import ApexChartWrapper from 'src/@core/styles/libs/react-apexcharts'
@@ -22,7 +22,7 @@ const EcommerceDashboard = () => {
     <ApexChartWrapper>
       <Grid container spacing={6}>
         <Grid item xs={12} md={4}>
-          <EcommerceCongratulationsJohn />
+          <CrmSalesWithAreaChart />
         </Grid>
         <Grid item xs={12} md={8}>
           <EcommerceStatistics />

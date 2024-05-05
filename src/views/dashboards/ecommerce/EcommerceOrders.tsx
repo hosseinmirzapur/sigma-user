@@ -37,21 +37,21 @@ const data: Data = {
   new: [
     {
       sender: {
-        name: 'Micheal Hughes',
+        name: 'احمد حسینی',
         address: '101 Boulder, California, 933130'
       },
       receiver: {
-        name: 'Daisy Coleman',
+        name: 'زهرا خردمند',
         address: '939 Orange, California, 910614'
       }
     },
     {
       sender: {
-        name: 'Glenn Todd',
+        name: 'محسن نوروزی',
         address: '1713 Garnet, California, 939573'
       },
       receiver: {
-        name: 'Arthur West',
+        name: 'مریم علیخانی',
         address: '156 Blaze, California, 925878'
       }
     }
@@ -59,21 +59,21 @@ const data: Data = {
   preparing: [
     {
       sender: {
-        name: 'Rose Cole',
+        name: 'مصطفی رضاییان',
         address: '61 Unions, California, 922523'
       },
       receiver: {
-        name: 'Polly Spencer',
+        name: 'احمدرضا منتظری',
         address: '865 Delta, California, 932830'
       }
     },
     {
       sender: {
-        name: 'Jerry Wood',
+        name: 'مریم سادات حسینی',
         address: '37 Marjory, California, 951958'
       },
       receiver: {
-        name: 'Sam McCormick',
+        name: 'رضا نوروزی',
         address: '926 Reynolds, California, 910279'
       }
     }
@@ -81,21 +81,21 @@ const data: Data = {
   shipping: [
     {
       sender: {
-        name: 'Alex Walton',
+        name: 'جلال اکرمی',
         address: '78 Judson, California, 956084'
       },
       receiver: {
-        name: 'Eula Griffin',
+        name: 'سید جواد محمودی',
         address: '56 Bernard, California, 965133'
       }
     },
     {
       sender: {
-        name: 'Lula Barton',
+        name: 'نیما احدی',
         address: '95 Gaylord, California, 991955'
       },
       receiver: {
-        name: 'Craig Jacobs',
+        name: 'یعقوب طارمی',
         address: '73 Sandy, California, 954566'
       }
     }
@@ -127,20 +127,20 @@ const EcommerceOrders = () => {
     <Card>
       <CardHeader
         sx={{ pb: 4 }}
-        title='Orders'
-        subheader='62 deliveries in progress'
+        title='سفارشات'
+        subheader='۶۲ تا تحویل در حال انجام'
         action={
           <OptionsMenu
-            options={['Show all orders', 'Share', 'Refresh']}
+            options={['نمایش همه سفارشات', 'اشتراک گذاری', 'تازه سازی']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }
       />
       <TabContext value={value}>
         <TabList variant='fullWidth' onChange={handleChange} aria-label='tabs in orders card'>
-          <Tab value='new' label='New' />
-          <Tab value='preparing' label='Preparing' />
-          <Tab value='shipping' label='Shipping' />
+          <Tab value='new' label='جدید' />
+          <Tab value='preparing' label='آماده سازی' />
+          <Tab value='shipping' label='ارسالی' />
         </TabList>
         <TabPanel value={value}>
           {data[value as keyof Data].map((item: TimelineData, index: number) => {
@@ -165,7 +165,7 @@ const EcommerceOrders = () => {
                           textTransform: 'uppercase'
                         }}
                       >
-                        Sender
+                        فرستنده
                       </Typography>
                       <Typography sx={{ mb: 0.5 }} variant='h6'>
                         {item.sender.name}
@@ -191,7 +191,7 @@ const EcommerceOrders = () => {
                           textTransform: 'uppercase'
                         }}
                       >
-                        Receiver
+                        گیرنده
                       </Typography>
                       <Typography sx={{ mb: 0.5 }} variant='h6'>
                         {item.receiver.name}

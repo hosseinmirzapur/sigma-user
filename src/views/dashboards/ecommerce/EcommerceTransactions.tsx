@@ -27,54 +27,54 @@ interface DataType {
 const data: DataType[] = [
   {
     amount: 75,
-    title: 'Wallet',
-    subtitle: 'Starbucks',
+    title: 'کیف پول',
+    subtitle: 'استارباکس',
     amountDiff: 'negative',
     avatarColor: 'primary',
     avatarIcon: 'tabler:wallet'
   },
   {
     amount: 480,
-    subtitle: 'Add Money',
-    title: 'Bank Transfer',
+    subtitle: 'افزایش سرمایه',
+    title: 'انتقال بانکی',
     avatarColor: 'success',
     avatarIcon: 'tabler:browser-check'
   },
   {
     amount: 268,
-    title: 'PayPal',
+    title: 'پی پال',
     avatarColor: 'error',
-    subtitle: 'Client Payment',
+    subtitle: 'پرداخت مشتری',
     avatarIcon: 'tabler:brand-paypal'
   },
   {
     amount: 699,
-    title: 'Master Card',
+    title: 'مستر کارت',
     amountDiff: 'negative',
     avatarColor: 'secondary',
-    subtitle: 'Ordered iPhone 13',
+    subtitle: 'آیفون ۱۳ سفارشی',
     avatarIcon: 'tabler:credit-card'
   },
   {
     amount: 98,
-    subtitle: 'Refund',
+    subtitle: 'بازپرداخت',
     avatarColor: 'info',
-    title: 'Bank Transaction',
+    title: 'تراکنش بانکی',
     avatarIcon: 'tabler:currency-dollar'
   },
   {
     amount: 126,
-    title: 'PayPal',
+    title: 'پی پال',
     avatarColor: 'error',
-    subtitle: 'Client Payment',
+    subtitle: 'پرداخت مشتری',
     avatarIcon: 'tabler:brand-paypal'
   },
   {
     amount: 1290,
-    title: 'Bank Transfer',
+    title: 'انتقال بانکی',
     amountDiff: 'negative',
     avatarColor: 'success',
-    subtitle: 'Pay Office Rent',
+    subtitle: 'قسط پرداخت دفترکاری',
     avatarIcon: 'tabler:browser-check'
   }
 ]
@@ -83,11 +83,11 @@ const EcommerceTransactions = () => {
   return (
     <Card>
       <CardHeader
-        title='Transactions'
-        subheader='Total 58 transaction done in month'
+        title='تراکنش ها'
+        subheader='۵۸ تراکنش ماهانه انجام شده'
         action={
           <OptionsMenu
-            options={['Refresh', 'Show all entries', 'Make payment']}
+            options={['تازه سازی', 'نمایش همه ورودی ها', 'ایجاد پرداخت']}
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
           />
         }
@@ -131,7 +131,7 @@ const EcommerceTransactions = () => {
                 <Typography
                   sx={{ fontWeight: 500, color: item.amountDiff === 'negative' ? 'error.main' : 'success.main' }}
                 >
-                  {`${item.amountDiff === 'negative' ? '-' : '+'}$${item.amount}`}
+                  {`${item.amountDiff === 'negative' ? '-' : '+'}${item.amount} دلار`}
                 </Typography>
               </Box>
             </Box>

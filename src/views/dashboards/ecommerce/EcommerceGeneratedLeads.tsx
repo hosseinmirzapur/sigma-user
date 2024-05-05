@@ -34,7 +34,7 @@ const EcommerceGeneratedLeads = () => {
     legend: { show: false },
     tooltip: { enabled: false },
     dataLabels: { enabled: false },
-    labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
+    labels: ['قطعات الکترونیکی', 'ورزش', 'دکوراسیون', 'مد'],
     states: {
       hover: {
         filter: { type: 'none' }
@@ -72,7 +72,7 @@ const EcommerceGeneratedLeads = () => {
             },
             total: {
               show: true,
-              label: 'Total',
+              label: 'کل',
               color: theme.palette.text.secondary,
               fontFamily: theme.typography.fontFamily,
               fontSize: theme.typography.h5.fontSize as string
@@ -104,9 +104,9 @@ const EcommerceGeneratedLeads = () => {
           <Box sx={{ gap: 1.75, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <Typography variant='h5' sx={{ mb: 0.5 }}>
-                Generated Leads
+                سرنخ های ایجاد شده
               </Typography>
-              <Typography variant='body2'>Monthly Report</Typography>
+              <Typography variant='body2'>گزارش ماهانه</Typography>
             </div>
             <div>
               <Typography variant='h3'>4,350</Typography>

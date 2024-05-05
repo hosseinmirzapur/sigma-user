@@ -76,13 +76,13 @@ const EcommerceExpenses = () => {
   return (
     <Card>
       <CardContent>
-        <Typography variant='h5'>82.5k</Typography>
+        <Typography variant='h5'>82.5 هزار دلار</Typography>
         <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-          Expenses
+          هزینه ها
         </Typography>
         <ReactApexcharts type='radialBar' height={149} series={[78]} options={options} />
         <Typography variant='body2' sx={{ textAlign: 'center', color: 'text.disabled' }}>
-          $21k Expenses more than last month
+          21 هزار دلار افزایش هزینه نسبت به سال پیش
         </Typography>
       </CardContent>
     </Card>

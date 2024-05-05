@@ -18,38 +18,38 @@ interface DataType {
 const data: DataType[] = [
   {
     amount: '$999.29',
-    title: 'Apple iPhone 13',
-    subtitle: 'Item: #FXZ-4567',
+    title: 'اپل آیفون ۱۳',
+    subtitle: 'آیتم: #FXZ-4567',
     imgSrc: '/images/cards/apple-iPhone-13.png'
   },
   {
     amount: '$72.40',
-    title: 'Nike Air Jordan',
-    subtitle: 'Item: #FXZ-3456',
+    title: 'نایک ایر جردن',
+    subtitle: 'آیتم: #FXZ-3456',
     imgSrc: '/images/cards/nike-air-jordan.png'
   },
   {
     amount: '$99.90',
-    title: 'Beats Studio 2',
-    subtitle: 'Item: #FXZ-9485',
+    title: 'بیتس استودیو ۲',
+    subtitle: 'آیتم: #FXZ-9485',
     imgSrc: '/images/cards/beats-studio-2.png'
   },
   {
     amount: '$249.99',
-    subtitle: 'Item: #FXZ-2345',
-    title: 'Apple Watch Series 7',
+    subtitle: 'آیتم: #FXZ-2345',
+    title: 'اپل واچ سری ۷',
     imgSrc: '/images/cards/apple-watch-series-7.png'
   },
   {
     amount: '$79.40',
-    title: 'Amazon Echo Dot',
-    subtitle: 'Item: #FXZ-8959',
+    title: 'آمازون اکو دات',
+    subtitle: 'آیتم: #FXZ-8959',
     imgSrc: '/images/cards/amazon-echo-dot.png'
   },
   {
     amount: '$129.48',
-    subtitle: 'Item: #FXZ-7892',
-    title: 'PlayStation Console',
+    subtitle: 'آیتم: #FXZ-7892',
+    title: 'کنسول پلی استیشن',
     imgSrc: '/images/cards/play-station-console.png'
   }
 ]
@@ -58,12 +58,12 @@ const EcommercePopularProducts = () => {
   return (
     <Card>
       <CardHeader
-        title='Popular Products'
-        subheader='Total 10.4k Visitors'
+        title='محصولات محبوب'
+        subheader='۱۰ هزار نفر مراجعه کننده به صورت کلی'
         action={
           <OptionsMenu
             iconButtonProps={{ size: 'small', sx: { color: 'text.disabled' } }}
-            options={['Price - low to high', 'Price - high to low', 'Best seller']}
+            options={['قیمت - کم به زیاد', 'قیمت - زیاد به کم', 'برترین فروشنده']}
           />
         }
       />

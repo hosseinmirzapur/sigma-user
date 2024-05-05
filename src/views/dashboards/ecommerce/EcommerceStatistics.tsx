@@ -24,27 +24,27 @@ interface DataType {
 
 const data: DataType[] = [
   {
-    stats: '230k',
-    title: 'Sales',
+    stats: '230 واحد',
+    title: 'فروش',
     color: 'primary',
     icon: 'tabler:chart-pie-2'
   },
   {
     color: 'info',
-    stats: '8.549k',
-    title: 'Customers',
+    stats: '8500 نفر',
+    title: 'مشتریان',
     icon: 'tabler:users'
   },
   {
     color: 'error',
-    stats: '1.423k',
-    title: 'Products',
+    stats: '1423 تا',
+    title: 'محصولات',
     icon: 'tabler:shopping-cart'
   },
   {
-    stats: '$9745',
+    stats: '۹ هزار دلار',
     color: 'success',
-    title: 'Revenue',
+    title: 'سود سالانه',
     icon: 'tabler:currency-dollar'
   }
 ]
@@ -69,11 +69,11 @@ const EcommerceStatistics = () => {
   return (
     <Card>
       <CardHeader
-        title='Statistics'
+        title='آمار'
         sx={{ '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' } }}
         action={
           <Typography variant='body2' sx={{ color: 'text.disabled' }}>
-            Updated 1 month ago
+            آخرین به روزرسانی یک ماه پیش
           </Typography>
         }
       />
